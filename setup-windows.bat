@@ -104,6 +104,8 @@ SET install[nodejs]=1
 GOTO :eof
 
 :START
+PUSHD "%~dp0"
+
 ECHO --------------------------------------------------------------
 ECHO This script will install tools required for Predix development
 ECHO --------------------------------------------------------------
@@ -163,3 +165,5 @@ IF !install[nodejs]! EQU 1 (
     npm install -g bower grunt-cli
   )
 )
+
+POPD
